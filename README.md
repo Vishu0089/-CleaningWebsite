@@ -1,24 +1,33 @@
-# SampleCleaningWebsite
+# Clean Canada
 
-make good one this
+A responsive, single-page cleaning services website with a quote request form connected to Zapier.
 
-This project was built with [Lovable](https://lovable.dev).
+## Run locally
 
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/8d90c5e0-eac6-4835-951b-34289b493648).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Requires Node.js 22 or newer and npm.
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+git clone https://github.com/Vishu0089/-CleaningWebsite.git CleaningWebsite
+cd CleaningWebsite
+npm ci
 npm run dev
 ```
+
+Open the local URL printed by Vite, usually `http://localhost:5173`.
+
+## Build and check
+
+```sh
+npm run lint
+npm run build
+```
+
+## GitHub Pages deployment
+
+Every push to `main` runs the GitHub Actions workflow in `.github/workflows/deploy-pages.yml`. The workflow prerenders the site and publishes it to:
+
+<https://vishu0089.github.io/-CleaningWebsite/>
+
+The Pages build uses the repository subpath as its base URL. Local development and regular production builds continue to use the root URL.
+
+If Pages has not been enabled for this repository yet, open **Settings → Pages** and select **GitHub Actions** as the build and deployment source. The quote request form sends submissions directly to the configured Zapier webhook.
